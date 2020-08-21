@@ -20,6 +20,17 @@ print(lesser_of_two_evens(2,4))
 #Solution 2
 
 def lesser_of_two_evens(a,b):
+    if a % 2 == 0 and b % 2 == 0:
+        result = min(a,b)
+    else:
+        result = max(a,b)
+    return result
+
+print(lesser_of_two_evens(2,5))
+
+#Solution 3
+
+def lesser_of_two_evens(a,b):
     if a % 2 == 0  and b % 2 == 0:
         if a < b:
             result = a
