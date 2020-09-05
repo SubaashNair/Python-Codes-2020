@@ -3,16 +3,22 @@
 #By convention, 0 and 1 are not prime.
 
 def count_primes(num):
+    if num < 2:
+        return 0
 
-    count = 0 
-    num_val = 0
+    primes = [2]
+    x =3
 
-    for val in range(0,num+1):
-        if val % 1 == 0 and val % val == 0:
-            count+=1
-            num_val+=val
-        elif val == 0 and val == 1:
-            count+=1
-        return num_val
-print(count_primes(100))
+    while x<= num:
+        for y in range(3,x,2):
+            if x%y==0:
+                x+=2
+                break
+        else:
+            primes.append(x)
+            x+=2
+    print(primes)
+    return len(primes)
+
+print(count_primes(34))
         
